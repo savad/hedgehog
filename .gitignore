@@ -1,0 +1,15 @@
+*.pyc
+static/*
+hedgehog/local.py
+nbproject
+keys/keys.pub
+media/*
+venv/*
+*.db
+.idea/*
+.DS_Store
+*.rdb
+.pytest_cache
+# log files
+*.log
+timelog.log
