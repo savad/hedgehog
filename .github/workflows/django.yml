@@ -19,7 +19,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Automated PR creation
           title: Automated Pull Request
-          base: develop
+          base: master
           body: |
             This PR was automatically generated to merge into the 'develop' branch.
             Please review and merge if appropriate.
