@@ -1,19 +1,24 @@
-name: Pull Request Action
+name: Create Pull Request
+
 on:
   push:
-    branches:
-      - features/*
+    branches-ignore:
+      - master
 
 jobs:
-  create-pull-request:
+  create_pr:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out repository code
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: pull-request
-        uses: repo-sync/pull-request@v2
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
         with:
-          destination_branch: "master"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_label: "feature, automated pr"
-          pr_title: "[Example] Simple demo"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: This PR was automatically generated
+          title: This PR was automatically generated
+          body: |
+            This PR was automatically generated.
+            Please review and merge if appropriate.
