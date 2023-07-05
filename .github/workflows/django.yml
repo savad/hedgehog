@@ -8,7 +8,7 @@ on:
 jobs:
   create_pr:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -17,8 +17,9 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: This PR was automatically generated
-          title: This PR was automatically generated
+          commit-message: Automated PR creation
+          title: Automated Pull Request
+          base: develop
           body: |
-            This PR was automatically generated.
+            This PR was automatically generated to merge into the 'develop' branch.
             Please review and merge if appropriate.
